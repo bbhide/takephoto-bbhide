@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Take Photo</title>
+	<script type="text/javascript" src="swfobject.js"></script>
+	<script type="text/javascript" src="takephoto.js"></script>
+	<script type="text/javascript">
+		takephoto.init({
+				sSaveUrl: "save.php",
+				iJpegQuality: "100",
+				menu: false,
+				id: "myDynamicContent",
+				name: "myDynamicContent",
+				swf:"picture.swf",
+				containerId:"myContent",
+				height:"480",
+				width:"640",
+				success:function(){
+					alert("Photo taken :)");
+				},
+				failed: function(){
+					alert("Sorry! Unable to take photo :(");
+				}
+			});
+	</script>
+</head>
+<body>
+	<div id="myContent"></div>
+	<a href="javascript:;" onclick="takephoto.capture();">Take Photo</a>
+</body>
+</html>
